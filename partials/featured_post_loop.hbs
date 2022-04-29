@@ -1,0 +1,21 @@
+{{#get "posts" limit="3" filter="featured:true"}}
+    {{#if posts}}
+    <section id="featured-post" class="column is-full">
+    <div class="columns is-flex is-flex-wrap-wrap content-block center-block">
+        <div class="column is-full headline">
+            <h2 class="is-uppercase is-size-5">Featured Post</h2>
+        </div>
+        {{#foreach posts}}
+        <article class="featured-post-card column is-one-third {{post_class}}">
+            <div>
+                <a href="{{url}}"><img class="thumbnail" src="{{img_url feature_image}}" alt="thumbnail {{title}}"></a>
+            </div>
+            <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+        </article>
+        {{/foreach}}
+    </div>
+    </section>
+    {{/if}}
+{{else}}
+  <p class="error">{{error}}</p>
+{{/get}}

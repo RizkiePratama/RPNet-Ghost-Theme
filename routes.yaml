@@ -1,0 +1,11 @@
+routes:
+  /:
+    template: home
+
+  /{slug}/:
+    template: index
+
+taxonomies:
+  post: /post/{slug}/
+  tag: /tag/{slug}/
+  author: /author/{slug}/

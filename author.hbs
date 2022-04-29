@@ -1,0 +1,34 @@
+{{!< default}}
+
+<main class="content content-roll container">
+    {{#author}}
+    <header class="hero" {{#if profile_image}}style="background-image: url({{cover_image}})"{{/if}}>
+        <div class="hero-body hero-author hero-overlay has-text-centered">
+            <figure class="author-avatar">
+                <a href="{{url}}" style="background-image: url({{img_url profile_image}})"></a>
+            </figure>
+            <div class="subtitle author-info">
+                <div class="author-name">
+                    <h3 class="title"><a href="{{url}}">{{name}}</a></h3>
+                </div>
+                <div class="author-bio">
+                    <p class="subtitle">{{bio}}</p>
+                </div>
+                <div class="author-meta">
+                    {{#if location}}<span><i class="fa fa-map-marker fa-1x"></i>{{location}}</span>{{/if}}
+                    {{#if website}}<span><a href="{{website}}"><i class="fa fa-link fa-1x"></i>{{website}}</a></span>{{/if}}
+                    {{#if facebook}}<span><a href="{{facebook_url}}"><i class="fa fa-facebook-square fa-1x"></i>Facebook</a></span>{{/if}}
+                    {{#if twitter}}<span><a href="{{twitter_url}}"><i class="fa fa-twitter fa-1x"></i>Twitter</a></span>{{/if}}
+                    <span><i class="fa fa-pencil fa-1x"></i>{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    {{/author}}
+
+    <div class="columns is-flex is-flex-wrap-wrap">
+        <section class="column is-full">
+            {{> post_loop}}
+        </section>
+    </div>
+</main>

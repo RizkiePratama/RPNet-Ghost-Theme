@@ -1,0 +1,28 @@
+<section id="latest-post" class="column is-full">
+<div class="columns is-full headline">
+    <h2 class="column is-full is-uppercase is-size-6">Latest Post</h2>
+</div>
+<div class="columns is-flex is-flex-wrap-wrap content-block center-block">
+     <div class="column is-full">
+    {{#foreach posts}}
+    <article class="post-card columns {{post_class}}">
+        <div class="column is-one-third">
+            <a href="{{url}}"><img class="thumbnail" src="{{img_url feature_image}}" alt="thumbnail {{title}}"></a>
+        </div>
+        <div class="column">
+            <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+            <div class="meta">
+                <span>Posted by {{authors}} on 
+                <time datetime='{{date format="YYYY-MM-DD"}}'>{{date format="DD MMMM YYYY"}}</time></span>
+            </div>
+            <p class="excerpt">
+            {{excerpt words=60}}... <a href="{{url}}">Read More &raquo;</a>
+            </p>
+        </div>
+    </article>
+    {{/foreach}}
+    </div>
+</div>
+
+{{pagination}}
+</section>

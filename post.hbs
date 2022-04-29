@@ -1,0 +1,104 @@
+{{!< default}}
+
+{{!-- POST START --}}
+{{#post}}
+<main class="content content-single container is-max-desktop">
+    <article class="{{post_class}}">
+        <div class="column content-block center-block">
+            <h2 class="title">{{title}}</h2>
+            <div class="meta-container">
+                <span class="post-meta">Posted by {{authors}} on <time datetime='{{date format="YYYY-MM-DD"}}'>{{date format="DD MMMM YYYY"}}</time></span>
+                <div class="tags-container">
+                    {{tags separator=""}}
+                </div>
+            </div>
+
+            {{#if feature_image}}<img class="featured-image" src="{{img_url feature_image}}">{{/if}}
+
+            <!-- POST CONTENT START -->
+            {{content}}
+            <!-- POST CONTENT END -->
+
+            <div class="columns author-block">
+            {{#primary_author}}
+                <div class="column is-one-third author-avatar">
+                    <a href="{{url}}" style="background-image: url({{img_url profile_image}})"></a>
+                </div> <!-- .author-avatar -->
+
+                <div class="column author-info">
+                    <div class="author-name">
+                        <h3><a href="{{url}}">{{name}}</a></h3>
+                    </div>
+                    <div class="author-bio">
+                        <p>{{bio}}</p>
+                    </div>
+                    <div class="author-meta">
+                        <span><i class="fa fa-map-marker fa-1x"></i>{{location}}</span>
+                        <span><a href="{{website}}"><i class="fa fa-link fa-1x"></i>{{website}}</a></span>
+                        <span><a href="{{facebook_url}}"><i class="fa fa-facebook-square fa-1x"></i>Facebook</a></span>
+                        <span><a href="{{twitter_url}}"><i class="fa fa-twitter fa-1x"></i>Twitter</a></span>
+                    </div>
+                </div> <!-- .author-info -->
+            {{/primary_author}}
+            </div> <!-- .author-block -->
+
+            
+            <div class="post-navigation columns">
+                {{#next_post}}
+                <div class="column is-half">
+                    <div class="columns headline">
+                        <h2 class="column is-full is-uppercase is-size-6">Next Post</h2>
+                    </div>
+                    <article class="post-card columns {{post_class}}">
+                        <div class="column is-one-third">
+                            <a href="{{url}}"><img class="thumbnail" src="{{img_url feature_image}}" alt="thumbnail {{title}}"></a>
+                        </div>
+                        <div class="column">
+                            <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+                        </div>
+                    </article>
+                </div>
+                {{/next_post}}
+                {{#prev_post}}
+                <div class="column is-half">
+                    <div class="columns headline">
+                        <h2 class="column is-full is-uppercase is-size-6">Previous Post</h2>
+                    </div>
+                    <article class="post-card columns {{post_class}}">
+                        <div class="column is-one-third">
+                            <a href="{{url}}"><img class="thumbnail" src="{{img_url feature_image}}" alt="thumbnail {{title}}"></a>
+                        </div>
+                        <div class="column">
+                            <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+                        </div>
+                    </article>
+                </div>
+                {{/prev_post}}
+            </div> <!-- .post-navigation -->
+
+            <div class="response-block">
+                <div id="disqus_thread">
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </div> <!-- #disqus-thread -->
+            </div> <!-- .response-block -->
+        </div> <!-- .content-block.center-block -->
+
+        <!-- DISQUS SCRIPT START -->
+        <script>
+        var disqus_config = function () {
+        this.page.url = '{{url absolute="true"}}';
+        this.page.identifier = 'blogpost-{{comment_id}}';
+        };
+        (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://<your-disqus-site-id>.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <!-- DISQUS SCRIPT END -->
+                        
+    </article>
+</main>
+{{/post}}
+{{!-- POST END --}}

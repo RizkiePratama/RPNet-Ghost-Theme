@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>{{meta_title}}</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {{!--- STYLESHEETS --}}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mako&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{{asset "css/rpghost-global.css"}}" />
+
+        {{!--- GHOST HEAD --}}
+        {{ghost_head}}
+    </head>
+    <body class="body-content is-rpblog-dark-0">
+        <header id="header-navigation" class="is-rpblog-dark-0">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+
+                    <a class="navbar-item" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                    <img id="header-logo" src="{{@site.logo}}" alt="logo">
+                    {{else}}
+                     <h2 id="header-logo">{{@site.title}}</h2>
+                    {{/if}}
+                    </a>
+                </div> <!-- .nav-left -->
+
+                <div class="navbar-end">
+                    <div id="header-nav-collapse">
+                        {{!-- Site Navigation --}}
+                        {{navigation}}
+                    </div>
+                </div> <!-- .nav-right -->
+            </nav> <!-- .container -->
+        </header> <!-- #header-navigation -->
+
+        <div class="blog-content">
+            {{{body}}}
+        </div>
+    </body>
+
+    {{#if ghost_foot}}
+    <!-- Ghost Foot START -->
+    {{ghost_foot}}
+    <!-- Ghost Foot END -->
+    {{/if}}
+
+    <!-- JS LOAD START -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
+    <script src="{{asset "js/rpblog.js"}}"></script>
+    <!-- JS LOAD END -->
+
+    <footer class="footer-content">
+        <div id="footnote" class="columns is-flex is-gapless">
+            <div id="copyright-note" class="column">
+                Copyright &copy; 2017, <a href="/">{{@site.title}}</a>
+            </div>
+            <div id="engine-note" class="column is-align-content-end">
+                Proudly Published with <a href="https://ghost.org/">Ghost</a>
+            </div>
+        </div> <!-- #footnote.column -->
+    </footer>
+</html>

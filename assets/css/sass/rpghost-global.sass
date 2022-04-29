@@ -1,0 +1,322 @@
+@import "~bulma/sass/base/minireset.sass"
+@import "~bulma/sass/components/_all.sass"
+@import "~bulma/sass/elements/_all.sass"
+@import "~bulma/sass/grid/_all.sass"
+@import "~bulma/sass/helpers/_all.sass"
+@import "~bulma/sass/layout/_all.sass"
+@import "~bulma/sass/utilities/_all.sass"
+
+$dark-0: #1A1A1A;
+$dark-1: #1F1F1F;
+$dark-0-fg-1: #FAFAFA;
+$dark-0-fg-2: #DADADA;
+$dark-0-fg-3: #b8b8b8;
+$dark-overlay: #000000cc;
+
+$mobile-breakpoint: 770px;
+$tablet-breakpoint: 1023px;
+
+h1, h2, h3, h4,h5, h6, p, span, a
+  font-family: 'Mako', sans-serif;
+
+body
+  padding-top: 70px;
+
+hr
+  background-color: $dark-0-fg-2;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  height: 1px;
+  margin: 1.5rem 0;
+// Koenig editor Compatibility
+
+.kg-width-full,
+.kg-width-wide,
+.kg-gallery-container,
+.kg-gallery-row,
+.kg-gallery-image,
+.kg-bookmark-card,
+.kg-bookmark-container,
+.kg-bookmark-content,
+.kg-bookmark-title,
+.kg-bookmark-description,
+.kg-bookmark-metadata,
+.kg-bookmark-icon,
+.kg-bookmark-author,
+.kg-bookmark-publisher,
+.kg-bookmark-thumbnail 
+ content: "";
+
+#header-navigation 
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
+.navbar
+  padding: 5px 15px;
+.hero
+  min-height: 520px;
+  background: center center/cover no-repeat;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+  .hero-body
+    background-color: $dark-overlay;
+    border-radius: 15px;
+.blog-content
+  min-height: 80vh;
+.content 
+  figure
+    margin-left: 0px!important;
+    margin-right: 0px!important;
+    
+  blockquote
+    background: $dark-1;
+    color: $dark-0-fg-2;
+
+.is-rpblog-dark-0 h1, .is-rpblog-dark-0 h2,
+.is-rpblog-dark-0 h3, .is-rpblog-dark-0 h4,
+.is-rpblog-dark-0 h5, .is-rpblog-dark-0 h6,
+.is-rpblog-dark-0 a
+  color: $dark-0-fg-1;
+
+.is-rpblog-dark-0 p, .is-rpblog-dark-0 span,
+.is-rpblog-dark-0 ul, .is-rpblog-dark-0 li,
+.is-rpblog-dark-0 strong, .is-rpblog-dark-0 div
+  color: $dark-0-fg-2;
+
+html
+.is-rpblog-dark-0 .navbar, .is-rpblog-dark-0 .navbar-menu
+  background-color: $dark-0;
+  color: $dark-0-fg-2;
+
+.is-rpblog-dark-0
+  background: $dark-0;
+
+.is-rpblog-dark-0 a
+  text-decoration: none;
+  transition: ease 0.5s
+
+.is-rpblog-dark-0 a:hover
+  color: $dark-0-fg-3;
+  transition: ease 0.5s
+
+.is-rpblog-dark-0 .navbar-item:hover
+  background-color: $dark-0;
+    
+.headline h2
+  color: $dark-0-fg-2;
+  margin: 0px;
+
+.footer-content
+  margin-top: 50px;
+
+#footnote
+  border-top: 1px solid $dark-0-fg-2;
+  padding: 20px;
+  a
+    font-weight: bold;
+
+#engine-note
+  text-align: right;
+
+.featured-post-card
+  .post-title
+    font-size: 1rem;
+
+.title
+  text-align: center;
+
+.tags-container
+  padding: 10px;
+  a
+    background-color: $dark-0-fg-1;
+    color: $dark-0;
+    padding: 5px 15px;
+    margin: 15px 5px;
+    border-radius: 3px;
+  a:hover
+    background-color: $dark-0-fg-3;
+    color: $dark-0;
+
+.content-single
+  margin: 3rem auto 2rem;
+  .featured-image
+    margin: 2rem auto;
+  .meta-container
+    margin: 0 auto 2rem;
+    text-align: center
+  .post-meta
+    font-size: 1rem;
+
+.thumbnail,
+.featured-image,
+.kg-image,
+.kg-gallery-image img
+  border-radius: 10px;
+
+.kg-code-card
+  background-color: $dark-1;
+  color: $dark-0-fg-2;
+  padding: 1rem;
+
+.kg-embed-card
+  iframe
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 550px;
+
+.kg-bookmark-card
+  background: $dark-0-fg-1;
+  border-radius: 10px;
+
+  .kg-bookmark-container
+    display: flex;
+    flex-direction: row;
+
+  .kg-bookmark-content
+    flex: 1 1 auto;
+    color: $dark-0;
+    padding: 2rem;
+    width: 50%;
+
+    .kg-bookmark-title,
+    .kg-bookmark-description
+      text-align: left
+
+    .kg-bookmark-title
+      font-weight: bold;
+
+    .kg-bookmark-description
+      margin-bottom: 20px;
+
+    .kg-bookmark-metadata
+      display: flex;
+      flex-align: center;
+
+      .kg-bookmark-author
+        color: $dark-0;
+      .kg-bookmark-icon
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+
+  .kg-bookmark-thumbnail
+    width: 30%;
+    align-self: flex-end;
+    flex: 1 1 auto;
+
+    img
+      height: 100%;
+      border-radius: 0px 10px 10px 0px;
+
+.kg-gallery-card
+  margin-top: 0px;
+  margin-bottom: 0px;
+  
+  .kg-gallery-container
+    .kg-gallery-row
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      .kg-gallery-image
+        padding: 10px;
+
+        img
+          width: 100%;
+          flex: 1.5 1 0%;
+
+
+.author-block
+  padding: 1.75rem;
+  margin: 2.75rem auto 1.75rem!important;
+  border: 1px solid $dark-0-fg-2;
+  border-radius: 10px;
+
+.author-avatar
+  a
+    display: block;
+    background: center center/cover no-repeat;
+    border-radius: 50%;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+
+.author-info
+.author-meta
+  margin-top: 20px;
+
+.author-info
+  a
+    font-weight: bold;
+  span
+    margin-right: 15px;
+  .fa
+    margin-right: 7px;
+
+.post-navigation
+  .post-title
+    font-size: 1.2em;
+
+@media screen and (max-width: $tablet-breakpoint)
+  .nav-right
+    flex-grow: 0;
+  .navbar
+    padding: 0px;
+  .navbar-brand
+    background-color: $dark-0;
+  .navbar-brand, .navbar-end
+    padding-left: 10px;
+    padding-right: 10px;
+  #header-nav-collapse
+    .navbar-menu
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -9999;
+      width: 100%;
+      transition: ease 2s;
+      transform: translatey(-100%);
+      box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
+    .navbar-menu.is-active
+      opacity: 100;
+      transform: translatey(100%);
+      transition: ease 1s;
+
+@media screen and  (max-width: $mobile-breakpoint)
+  #featured-post
+    display: none;
+  .content
+    margin-left: 20px;
+    margin-right: 20px;
+  .post-card
+    margin-bottom: 35px!important;
+  .post-card .column
+    padding: 10px;
+
+  .author-avatar
+    a
+      width: 150px;
+      height: 150px;
+
+  .author-info
+    margin-top: 20px;
+
+  .kg-bookmark-card
+    .kg-bookmark-container
+      flex-direction: column;
+
+    .kg-bookmark-content
+      width: 100%;
+
+    .kg-bookmark-thumbnail
+      width: 100%;
+      img
+        height: 100%;
+        border-radius: 0px 10px 10px 0px;

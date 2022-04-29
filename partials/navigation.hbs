@@ -1,0 +1,7 @@
+<div class="navbar-menu">
+    <!-- Loop through the navigation items -->
+    {{#foreach navigation}}
+    <a class="navbar-item nav-{{slug}}{{#if current}} nav-current{{/if}} is-uppercase" href="{{url absolute="true"}}">{{label}}</a>
+    {{/foreach}}
+    <!-- End the loop -->
+</div>
